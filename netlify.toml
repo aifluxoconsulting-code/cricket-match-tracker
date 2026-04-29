@@ -1,0 +1,15 @@
+# Build configuration for Netlify
+# This project is a static SPA built with Vite — no server runtime needed.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback so deep links like /matches refresh correctly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
